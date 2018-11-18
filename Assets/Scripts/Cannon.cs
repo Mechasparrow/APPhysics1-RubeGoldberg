@@ -7,6 +7,8 @@ public class Cannon : MonoBehaviour, TriggeredObject {
     public GameObject forcePoint;
     public GameObject cannonBall;
 
+    public float power; 
+
     private bool launched;
     private bool launching;
 
@@ -14,6 +16,7 @@ public class Cannon : MonoBehaviour, TriggeredObject {
     private float launchDuration;
 
     private Vector3 launchForce;
+
 
     // Use this for initialization
     void Start () {
@@ -58,7 +61,7 @@ public class Cannon : MonoBehaviour, TriggeredObject {
 
             Vector3 forceVector = forcePointTranform.position - cannonBallTransform.position;
 
-            launchForce = forceVector * 50;
+            launchForce = forceVector * power;
             launching = true;
         }else
         {
